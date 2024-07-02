@@ -1,0 +1,44 @@
+version: "3.8"
+services:
+  census_db:
+    container_name: census_db
+    image: mariadb:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=census
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+    ports:
+      - 3306:3306
+    volumes:
+      - mariadb_data:/var/lib/mysql
+      - ./sql/:/docker-entrypoint-initdb.d/
+      - ./my_custom.cnf:/etc/mysql/conf.d/my_custom.cnf  # Mount custom config
+  api:
+    build:
+      context: ./src
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - census_db
+    environment:
+      - DB_HOST=census_db
+      - DB_PORT=3306
+      - DB_USER=user
+      - DB_PASSWORD=password
+      - DB_NAME=census
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    depends_on:
+      - api
+volumes:
+  mariadb_data:
+networks:
+  default:
+    driver: bridge

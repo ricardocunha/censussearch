@@ -1,0 +1,13 @@
+data/1.0-codebook.csv filter=lfs diff=lfs merge=lfs -text
+data/columns.csv filter=lfs diff=lfs merge=lfs -text
+data/usa.cpg filter=lfs diff=lfs merge=lfs -text
+data/usa.dbf filter=lfs diff=lfs merge=lfs -text
+data/usa.shx filter=lfs diff=lfs merge=lfs -text
+data/us_zip_codes_to_census_tracts.csv filter=lfs diff=lfs merge=lfs -text
+data/1.0.values.csv filter=lfs diff=lfs merge=lfs -text
+data/usa.prj filter=lfs diff=lfs merge=lfs -text
+data/usa.shp filter=lfs diff=lfs merge=lfs -text
+data/usa_zip_codes_geo_15m.json filter=lfs diff=lfs merge=lfs -text
+sql/census_json.sql filter=lfs diff=lfs merge=lfs -text
+sql/postcode_census_tract.sql filter=lfs diff=lfs merge=lfs -text
+sql/census_data.sql filter=lfs diff=lfs merge=lfs -text

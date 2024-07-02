@@ -1,0 +1,36 @@
+{
+  "name": "react-leaflet-geojson",
+  "version": "1.0.0",
+  "description": "Use react-leaflet to show GeoJSON with kml and points",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "@turf/center": "^7.0.0",
+    "axios": "^1.7.2",
+    "leaflet": "^1.6.0",
+    "prop-types": "15.6.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-leaflet": "^2.6.3",
+    "react-scripts": "3.4.1",
+    "webpack": "4.42.0"
+  },
+  "scripts": {
+    "start": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
